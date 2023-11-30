@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {Apk , Counter  } from './components'
+// import Counter from './counter/counter'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://react-redux.js.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Redux
-        </a>
-      </header>
-    </div>
+    
+    <BrowserRouter>
+    <Routes>
+      <Route>
+        <Route path="/" element={<Apk />} />
+        <Route path="/task" element={<Counter/>} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
   );
 }
 
